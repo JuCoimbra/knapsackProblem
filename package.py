@@ -62,6 +62,16 @@ def sortRoleta(population):
 
     return (roleta, population)
 
+def mutation(population, afnd):
+    for i in range(len(population.index)):
+        if random()< afnd:
+            if population.index[i]=='1':
+                population.index[i]=='0'
+            else:
+                population.index[i]=='1'
+    print("Depois %s" % population.index)
+    return population
+
 if __name__ == '__main__':
     geraItens()
     print(itens)
@@ -76,4 +86,10 @@ if __name__ == '__main__':
 
     newIndividual = population[choiceOne][0][0:4] + population[choiceTwo][0][4:8]
     print(newIndividual)
+    
+    #mutation(population)
+    population.mutation(0.5)
+    
+    
+
 
